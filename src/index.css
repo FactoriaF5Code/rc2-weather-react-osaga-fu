@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Sulphur+Point:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     text-decoration: none;
     box-sizing: border-box;
+    font-family: var(--main-font);
 }
 
 :root {
-    --primary-color: white;
+    --primary-color: ;
+    --secondary-color: ;
+    --main-font: 'Sulphur Point';
+    --second-font: 'Poiret One';
 }
