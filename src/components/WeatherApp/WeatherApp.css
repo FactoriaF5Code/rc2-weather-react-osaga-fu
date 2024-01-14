@@ -10,9 +10,10 @@ main {
 .current-weather-card {
   background-image: url("../../assets/fondo.png");
   background-size: cover;
+  
   min-width: 20%;
   height: 90%;
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
   padding: 0.5rem;
   box-shadow: var(--third-color) 0px 0px 50px -11px;
@@ -24,24 +25,34 @@ main {
 }
 
 .location-name {
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: 400;
 }
 
 .location-temp {
-  font-size: 2rem;
+  font-size: 5rem;
 }
 
 .location-weather-state {
   font-weight: 400;
-  font-size: 0.8rem;
+  font-size: 1.6rem;
 }
 .temp-max-min {
   display: flex;
   gap: 5px;
-  font-size: 0.5rem;
+  font-size: 1rem;
 }
 
 span {
   display: flex;
+}
+
+.degree-symbol {
+  font-size: 2rem;
+  font-weight: 400;
+  padding-top: 10px;
+}
+
+.animated-weather-icon {
+    width: 50%;
 }
