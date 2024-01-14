@@ -8,12 +8,10 @@ main {
 }
 
 .current-weather-card {
-  background-image: url("../../assets/fondo.png");
-  background-size: cover;
-  
+  background: url("../../assets/fondo.png") center center/cover;
   min-width: 20%;
-  height: 90%;
-  border-radius: 10px;
+  max-height: 90%;
+  border-radius: 25px;
   color: white;
   padding: 0.5rem;
   box-shadow: var(--third-color) 0px 0px 50px -11px;
@@ -21,26 +19,28 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding-bottom: 10%;
+  padding: 5% 0 10% 0;
 }
 
 .location-name {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 400;
 }
 
 .location-temp {
-  font-size: 5rem;
+  font-size: 7rem;
 }
 
 .location-weather-state {
-  font-weight: 400;
-  font-size: 1.6rem;
+  font-weight: 100;
+  font-size: 2rem;
 }
+
 .temp-max-min {
   display: flex;
   gap: 5px;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  font-weight: 100;
 }
 
 span {
@@ -48,11 +48,11 @@ span {
 }
 
 .degree-symbol {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 400;
   padding-top: 10px;
 }
 
 .animated-weather-icon {
-    width: 50%;
+  width: 55%;
 }

@@ -57,6 +57,7 @@ export default function WeatherApp() {
     <main>
       {data.main && (
         <article className="current-weather-card">
+        
           <h3 className="location-name">{data.name}</h3>
           <span>
             <h1 className="location-temp">{data.main.temp.toFixed(1)}</h1>
@@ -74,6 +75,7 @@ export default function WeatherApp() {
             src={iconPaths[data.weather[0].icon]}
             alt=""
           />
+    
         </article>
       )}
     </main>
