@@ -1,5 +1,4 @@
 import "./WeatherApp.css";
-import "./animatedIcons.css";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
@@ -61,7 +60,7 @@ export default function WeatherApp() {
           <h3 className="location-name">{data.name}</h3>
           <span>
             <h1 className="location-temp">{data.main.temp.toFixed(1)}</h1>
-            <h4>°</h4>
+            <p className="degree-symbol">°</p>
           </span>
           <h4 className="location-weather-state">
             {data.weather[0].description}
@@ -71,6 +70,7 @@ export default function WeatherApp() {
             <h5>Mín: {data.main.temp_min.toFixed(1)}°</h5>
           </span>
           <img
+            className="animated-weather-icon"
             src={iconPaths[data.weather[0].icon]}
             alt=""
           />
