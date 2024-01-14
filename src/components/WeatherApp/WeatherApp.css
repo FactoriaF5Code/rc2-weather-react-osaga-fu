@@ -10,7 +10,7 @@ main {
 .current-weather-card {
   background-image: url("../../assets/fondo.png");
   background-size: cover;
-  min-width: 25%;
+  min-width: 20%;
   height: 90%;
   border-radius: 5px;
   color: white;
