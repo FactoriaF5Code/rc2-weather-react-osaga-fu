@@ -1,10 +1,8 @@
 import "./WeatherApp.css";
-import "./animatedIcons.css"
+import "./animatedIcons.css";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
-import  Icon from "../../assets/amcharts_weather_icons_1.0.0/animated/cloudy-day-1.svg?react";
-
 
 const API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?";
 const API_KEY = "c5a48b3e59d242aedae7b2fb0b9ad0e4";
@@ -39,14 +37,22 @@ export default function WeatherApp() {
     <main>
       {data.main && (
         <article className="current-weather-card">
-          <h1>{data.name}</h1>
-          <h3>{data.main.temp.toFixed(1)}°</h3>
-          <h4>{data.weather[0].description}</h4>
-          <span className="temp-max-min">
-            <h5>Máx: {data.main.temp_max.toFixed(1)}</h5>
-            <h5>Mín: {data.main.temp_min.toFixed(1)}</h5>
+          <h3 className="location-name">{data.name}</h3>
+          <span>
+            <h1 className="location-temp">{data.main.temp.toFixed(1)}</h1>
+            <h4>°</h4>
           </span>
-          <Icon />
+          <h4 className="location-weather-state">
+            {data.weather[0].description}
+          </h4>
+          <span className="temp-max-min">
+            <h5>Máx: {data.main.temp_max.toFixed(1)}°</h5>
+            <h5>Mín: {data.main.temp_min.toFixed(1)}°</h5>
+          </span>
+          <img
+            src="https://www.amcharts.com/wp-content/themes/amcharts4/css/img/icons/weather/animated/cloudy.svg"
+            alt=""
+          />
         </article>
       )}
     </main>
