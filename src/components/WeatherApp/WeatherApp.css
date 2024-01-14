@@ -9,8 +9,8 @@ main {
 
 .current-weather-card {
   background: url("../../assets/fondo.png") center center/cover;
-  min-width: 20%;
-  max-height: 90%;
+  width: 20%;
+  min-height: 80vh;
   border-radius: 25px;
   color: white;
   padding: 0.5rem;
@@ -19,7 +19,7 @@ main {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 5% 0 10% 0;
+  padding: 1rem;
 }
 
 .location-name {
@@ -56,3 +56,20 @@ span {
 .animated-weather-icon {
   width: 55%;
 }
+
+/*==============================*/
+
+.search-input {
+  background-color: #4f4e7570;
+  width: 80%;
+  height: 2rem;
+  border-radius: 8px;
+  padding: 1px 5px 1px 10px;
+  font-size: 1.2rem;    
+}
+
+.search-input:active, .search-input:focus {
+  color: white;
+  background-color: #4f4e75a1;
+}
+

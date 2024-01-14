@@ -16,3 +16,7 @@
     --main-font: 'Sulphur Point';
     --second-font: 'Poiret One';
 }
+
+input {
+    all: unset;
+}
