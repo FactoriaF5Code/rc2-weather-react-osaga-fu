@@ -7,6 +7,11 @@ main {
   background: linear-gradient(to top, var(--main-color), var(--second-color));
 }
 
+.cards-container{
+  display: flex;
+  gap:2rem;
+}
+
 .current-weather-card {
   background: url("../../assets/fondo.png") center center/cover;
   width: 23rem;
@@ -34,6 +39,7 @@ main {
 .location-weather-state {
   font-weight: 100;
   font-size: 3rem;
+  text-align: center;
 }
 
 .temp-max-min {
@@ -71,6 +77,9 @@ span {
   color: white;
   background-color: #4f4e75a1;
 }
+
+/* ============= */
+
 
 @media screen and (max-width: 834px) {
   .current-weather-card {
