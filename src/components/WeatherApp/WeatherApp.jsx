@@ -2,6 +2,7 @@ import "./WeatherApp.css";
 import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
+import SearchTool from "../SearchTool/SearchTool";
 
 
 const API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?";
@@ -74,7 +75,7 @@ export default function WeatherApp() {
             src={iconPaths[data.weather[0].icon]}
             alt=""
           />
-          <input className="search-input" type="text" placeholder="Buscar por ciudad"/>
+          <SearchTool/>
         </article>
       )}
     </main>
