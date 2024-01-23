@@ -14,6 +14,7 @@ export default function WeatherApp() {
   const [longitude, setLongitude] = useState("");
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
+  const [pulsado, setPulsado] = useState(false);
 
   const iconPaths = {
     "01d": ICON_ENDPOINT + "day.svg",
@@ -59,6 +60,7 @@ export default function WeatherApp() {
         `${API_ENDPOINT}q=${location}&appid=${API_KEY}&units=metric&lang=es`
       );
       setData(response.data);
+      setPulsado(true);
     }
   };
 
@@ -93,7 +95,12 @@ export default function WeatherApp() {
               onKeyDown={searchLocation}
             />
           </article>
-          <ForecastHourly latitude={latitude} longitude={longitude}/>
+          <ForecastHourly
+            latitude={latitude}
+            longitude={longitude}
+            location={location}
+            pulsado={pulsado}
+            data={data}/>
           <section className="daily-forecast-card"></section>
         </div>
       )}
