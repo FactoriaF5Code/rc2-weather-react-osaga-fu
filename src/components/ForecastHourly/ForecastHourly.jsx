@@ -1,11 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
 import "./ForecastHourly.css";
 import axios from "axios";
 
 const API_FORECAST = `http://api.openweathermap.org/data/2.5/forecast?`;
-const API_CITY = `q={city name}&cnt=5&lang=es&units=metric&appid=`;
-
 const API_KEY = "c5a48b3e59d242aedae7b2fb0b9ad0e4";
 const ICON_ENDPOINT =
   "https://www.amcharts.com/wp-content/themes/amcharts4/css/img/icons/weather/animated/";
@@ -29,7 +28,13 @@ const iconPaths = {
   "13n": ICON_ENDPOINT + "snowy-6.svg",
 };
 
-export default function ForecastHourly({ latitude, longitude, location, pulsado, data }) {
+export default function ForecastHourly({
+  latitude,
+  longitude,
+  location,
+  pulsado,
+  data,
+}) {
   const [forecastHourly, setForecastHourly] = useState([]);
 
   useEffect(() => {
@@ -40,7 +45,7 @@ export default function ForecastHourly({ latitude, longitude, location, pulsado,
             `${API_FORECAST}lat=${latitude}&lon=${longitude}&appid=${API_KEY}&units=metric&lang=es&cnt=5`
           );
           setForecastHourly(response.data);
-        } else if(pulsado) {
+        } else if (pulsado) {
           const response = await axios.get(
             `${API_FORECAST}q=${location}&cnt=5&lang=es&units=metric&appid=${API_KEY}`
           );
@@ -72,15 +77,7 @@ export default function ForecastHourly({ latitude, longitude, location, pulsado,
                 {hora.main.temp.toFixed(1)}°
               </h3>
             </article>
-          ))
-          //   <article className="hourly-forecast-card">
-          //     <h4 className="forecast-card-time">
-          //       {new Date(forecastHourly.list[0].dt * 1000).getHours()-1}h
-          //     </h4>
-          //     <img className="forecast-weather-icon" src={iconPaths[forecastHourly.list[0].weather[0].icon]} alt="no hay icono" />
-          //     <h3 className="forecast-card-temp">{forecastHourly.list[0].main.temp.toFixed(1)}°</h3>
-          //   </article>
-        }
+          ))}
       </div>
     </section>
   );

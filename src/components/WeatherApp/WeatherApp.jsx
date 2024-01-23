@@ -100,7 +100,8 @@ export default function WeatherApp() {
             longitude={longitude}
             location={location}
             pulsado={pulsado}
-            data={data}/>
+            data={data}
+          />
           <section className="daily-forecast-card"></section>
         </div>
       )}
