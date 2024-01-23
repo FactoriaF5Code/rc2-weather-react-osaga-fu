@@ -9,8 +9,8 @@ main {
 
 .current-weather-card {
   background: url("../../assets/fondo.png") center center/cover;
-  width: 20%;
-  min-height: 80vh;
+  width: 16rem;
+  height: 30rem;
   border-radius: 25px;
   color: white;
   padding: 0.5rem;
