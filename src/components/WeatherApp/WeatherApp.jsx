@@ -3,11 +3,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import axios from "axios";
 import ForecastHourly from "../ForecastHourly/ForecastHourly";
-
-const API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?";
-const API_KEY = "c5a48b3e59d242aedae7b2fb0b9ad0e4";
-const ICON_ENDPOINT =
-  "https://www.amcharts.com/wp-content/themes/amcharts4/css/img/icons/weather/animated/";
+import { iconPaths } from "../../utils/IconPath/IconPaths";
+import { API_KEY, API_ENDPOINT } from "../../utils/API/APIpaths";
 
 export default function WeatherApp() {
   const [latitude, setLatitude] = useState("");
@@ -16,32 +13,11 @@ export default function WeatherApp() {
   const [location, setLocation] = useState("");
   const [pulsado, setPulsado] = useState(false);
 
-  const iconPaths = {
-    "01d": ICON_ENDPOINT + "day.svg",
-    "01n": ICON_ENDPOINT + "night.svg",
-    "02d": ICON_ENDPOINT + "cloudy-day-1.svg",
-    "02n": ICON_ENDPOINT + "cloudy-night-1.svg",
-    "03d": ICON_ENDPOINT + "cloudy-day-3.svg",
-    "03n": ICON_ENDPOINT + "cloudy-night-3.svg",
-    "04d": ICON_ENDPOINT + "cloudy.svg",
-    "04n": ICON_ENDPOINT + "cloudy.svg",
-    "09d": ICON_ENDPOINT + "rainy-6.svg",
-    "09n": ICON_ENDPOINT + "rainy-6.svg",
-    "10d": ICON_ENDPOINT + "rainy-4.svg",
-    "10n": ICON_ENDPOINT + "rainy-4.svg",
-    "11d": ICON_ENDPOINT + "thunder.svg",
-    "11n": ICON_ENDPOINT + "thunder.svg",
-    "13d": ICON_ENDPOINT + "snowy-6.svg",
-    "13n": ICON_ENDPOINT + "snowy-6.svg",
-  };
-
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setLatitude(position.coords.latitude);
       setLongitude(position.coords.longitude);
     });
-
-    console.log(latitude, longitude);
 
     if (latitude !== "" && longitude !== "") {
       axios
