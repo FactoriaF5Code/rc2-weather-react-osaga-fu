@@ -15,7 +15,7 @@ main {
 .current-weather-card {
   background: url("../../assets/fondo.png") center center/cover;
   width: 23rem;
-  height: 45rem;
+  height: 100%;
   border-radius: 25px;
   color: white;
   box-shadow: var(--third-color) 0px 0px 50px -11px;
@@ -78,12 +78,36 @@ span {
   background-color: #4f4e75a1;
 }
 
-/* ============= */
+@media screen and (max-width: 1050px) {
+  .cards-container {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
 
-@media screen and (max-width: 834px) {
   .current-weather-card {
     width: 100%;
     height: 100%;
     border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 833px) {
+  .location-name {
+    font-size: 3rem;
+  }
+
+  .location-temp {
+    font-size: 5rem;
+  }
+
+  .location-weather-state {
+    font-size: 2rem;
+  }
+
+  .temp-max-min {
+    font-size: 2rem;
   }
 }

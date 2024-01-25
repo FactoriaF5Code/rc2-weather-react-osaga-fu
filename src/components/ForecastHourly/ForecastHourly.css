@@ -37,3 +37,40 @@
 .forecast-card-temp {
   font-size: 2rem;
 }
+
+@media screen and (max-width: 1050px) {
+  .hourly-forecast {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    border-top: 2px white solid;
+    background: none;
+  }
+}
+
+@media screen and (max-width: 833px) {
+  .hourly-cards-container {
+    gap: 0.1rem;
+  }
+
+  .hourly-forecast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to top, var(--main-color), var(--second-color));
+  }
+
+}
+
+@media screen and (max-width: 360px) {
+  .hourly-forecast-title {
+    font-size: 1.5rem;
+  }
+  .hourly-forecast {
+    padding: 0.1rem;
+  }
+  .forecast-card-temp {
+    font-size: 1.5rem;
+  }
+}
