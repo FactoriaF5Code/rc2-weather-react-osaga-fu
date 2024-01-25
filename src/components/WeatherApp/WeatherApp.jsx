@@ -4,9 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import ForecastHourly from "../ForecastHourly/ForecastHourly";
 import { iconPaths } from "../../utils/IconPath/IconPaths";
-
-const API_ENDPOINT = "https://api.openweathermap.org/data/2.5/weather?";
-const API_KEY = "c5a48b3e59d242aedae7b2fb0b9ad0e4";
+import { API_KEY, API_ENDPOINT } from "../../utils/API/APIpaths";
 
 export default function WeatherApp() {
   const [latitude, setLatitude] = useState("");
@@ -15,15 +13,11 @@ export default function WeatherApp() {
   const [location, setLocation] = useState("");
   const [pulsado, setPulsado] = useState(false);
 
-  
-
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
       setLatitude(position.coords.latitude);
       setLongitude(position.coords.longitude);
     });
-
-    console.log(latitude, longitude);
 
     if (latitude !== "" && longitude !== "") {
       axios

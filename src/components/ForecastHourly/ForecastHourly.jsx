@@ -4,9 +4,7 @@ import { useEffect, useState } from "react";
 import "./ForecastHourly.css";
 import axios from "axios";
 import { iconPaths } from "../../utils/IconPath/IconPaths";
-
-const API_FORECAST = `http://api.openweathermap.org/data/2.5/forecast?`;
-const API_KEY = "c5a48b3e59d242aedae7b2fb0b9ad0e4";
+import { API_KEY, API_FORECAST } from "../../utils/API/APIpaths";
 
 export default function ForecastHourly({
   latitude,
