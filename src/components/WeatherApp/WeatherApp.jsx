@@ -1,6 +1,5 @@
 import "./WeatherApp.css";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import ForecastHourly from "../ForecastHourly/ForecastHourly";
 import { iconPaths } from "../../utils/IconPath/IconPaths";
